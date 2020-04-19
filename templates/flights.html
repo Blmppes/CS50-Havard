@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+  Flights
+{% endblock %}
+
+{% block body %}
+  <h1>All Flights</h1>
+
+  <ul>
+    {% for flight in flights %}
+      <li>
+        <a href="{{ url_for('flight', flight_id=flight.id) }}">
+          {{ flight.origin }} to {{ flight.destination }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <a class="btn btn-primary" href="{{ url_for('index') }}">Book a flight</a>
+  <a class="btn btn-primary" href="{{ url_for('add_flight') }}">Add a flight</a>
+  <a class="btn btn-primary" href="{{ url_for('delete_flight') }}">Delete a flight</a>
+{% endblock %}

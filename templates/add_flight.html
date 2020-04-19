@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+  Add Flight
+{% endblock %}
+
+{% block body %}
+  <h1>Add a flight</h1>
+
+  <form action="{{ url_for('add_flight') }}" method="post">
+    <div class="form-group">
+      <input class="form-control" name="origin" placeholder="Origin:">
+    </div>
+
+    <div class="form-group">
+      <input class="form-control" name="destination" placeholder="Destination:">
+    </div>
+
+    <div class="form-group">
+      <input class="form-control" name="duration" placeholder="Duration:">
+    </div>
+
+    <div class="form-group">
+      <button class="btn btn-primary">Add a flight</button>
+    </div>
+  </form>
+
+  <a href="{{ url_for('flights') }}">Return</a>
+{% endblock %}
