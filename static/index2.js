@@ -8,3 +8,9 @@ socket.on("connect", () => {
       };
   });
 })
+
+socket.on('announce vote', data => {
+  const li = document.createElement('li');
+  li.innerHTML = `Vote recorded: ${data.selection}`;
+  document.querySelector("#votes").append(li);
+})
